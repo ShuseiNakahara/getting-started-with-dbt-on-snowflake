@@ -31,7 +31,7 @@ USE ROLE ACCOUNTADMIN;
 -- Alternatively, you can use an existing warehouse in your account.
 -- =============================================================================
 
-CREATE WAREHOUSE tasty_bytes_dbt_wh WAREHOUSE_SIZE = XLARGE AUTO_SUSPEND = 60;
+-- CREATE WAREHOUSE tasty_bytes_dbt_wh WAREHOUSE_SIZE = XLARGE AUTO_SUSPEND = 60;
 
 -- =============================================================================
 -- STEP 2: Create a database and schemas for integrations and model materializations
@@ -88,12 +88,12 @@ CREATE OR REPLACE SECRET tasty_bytes_dbt_db.integrations.tb_dbt_git_secret
 -- account for your forked repository.
 -- This API integration is used when creating a workspace in Snowsight (Projects > Workspaces)
 -- to connect Snowflake to your forked GitHub repository.
-CREATE OR REPLACE API INTEGRATION tb_dbt_git_api_integration
-  API_PROVIDER = git_https_api
-  API_ALLOWED_PREFIXES = ('https://github.com/my-github-account')
-  -- Comment out the following line if your forked repository is public
-  ALLOWED_AUTHENTICATION_SECRETS = (tasty_bytes_dbt_db.integrations.tb_dbt_git_secret)
-  ENABLED = TRUE;
+-- CREATE OR REPLACE API INTEGRATION tb_dbt_git_api_integration
+--   API_PROVIDER = git_https_api
+--   API_ALLOWED_PREFIXES = ('https://github.com/my-github-account')
+--   -- Comment out the following line if your forked repository is public
+--   ALLOWED_AUTHENTICATION_SECRETS = (tasty_bytes_dbt_db.integrations.tb_dbt_git_secret)
+--   ENABLED = TRUE;
 
 -- =============================================================================
 -- STEP 5: (Optional) Create a network rule and external access integration
