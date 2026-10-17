@@ -37,3 +37,7 @@ Task definitions for running the dbt project on a schedule using Snowflake Tasks
 2. Run `tasty_bytes_setup.sql` in a Snowflake worksheet to create the environment and load source data.
 3. Create a [workspace in Snowsight](https://docs.snowflake.com/en/user-guide/ui-snowsight/workspaces) connected to your fork.
 4. Run `dbt deps`, then `dbt run` from the workspace.
+
+## CI Trigger
+
+- 2026-10-17: Added a commit on this branch to trigger GitHub Actions.
